@@ -1,6 +1,6 @@
 from .models import Projects, ShortApplications
 from rest_framework import generics, views, pagination, filters
-from .serializers import ShortApplicationSerializer, ProjectsDetailSerializer, ProjectSerializer, ServicesSerializer
+from .serializers import ShortApplicationSerializer, ProjectsDetailSerializer, ProjectSerializer, ServicesSerializer, ReviewsSerializer
 from .serializers import ArticleSerializer, StaticInformationSerializer, TranslationSerializer, LangsSerializer, PartnersSerializer, ArticleDetailSerializer
 from admins.models import Articles, StaticInformation, Partners, Translations, Languages, FAQ, Services, Reviews
 from rest_framework.response import Response
@@ -95,7 +95,7 @@ class ServicesDetail(generics.RetrieveAPIView):
 # reviews
 class ReviewsList(generics.ListAPIView):
     queryset = Reviews.objects.filter(active=True).order_by('position')
-    serializer_class = Reviews
+    serializer_class = ReviewsSerializer
 
 
 # application add
