@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles',
     'main', 'corsheaders', 'rest_framework',
-    'easy_thumbnails', 'admins', 'autoslug',
+    'easy_thumbnails', 'admins',
     'django_cleanup.apps.CleanupConfig',
 ]
 
