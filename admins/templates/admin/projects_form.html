@@ -158,7 +158,7 @@
                     </label>
                     <br>
                     <!-- Input -->
-                    <input type="number" class="form-control" required name="position" step="any" id="porsition_id" {% if object and object.position %}
+                    <input type="number" class="form-control" name="position" step="any" id="porsition_id" {% if object and object.position %}
                         value="{{ object.position }}" {% endif %}>
                     <div class="invalid-feedback" style="display: block;">
                         {% if errors.position %}
