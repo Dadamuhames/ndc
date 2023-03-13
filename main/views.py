@@ -59,7 +59,7 @@ class LangsList(generics.ListAPIView):
 
 # partners list
 class PartnersList(generics.ListAPIView):
-    queryset = Partners.objects.filter(active=True).order_by('position')
+    queryset = Partners.objects.filter(active=True)
     serializer_class = PartnersSerializer
     pagination_class = BasePagination
 

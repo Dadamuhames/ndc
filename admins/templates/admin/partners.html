@@ -72,7 +72,7 @@
                         <a class="list-sort text-muted">Название</a>
                     </th>
                     <th>
-                        <a class="list-sort text-muted">Порядок</a>
+                        <a class="list-sort text-muted">Статус</a>
                     </th>
                     <th style="width: 200px;"></th>
                 </tr>
@@ -96,9 +96,11 @@
                         </p>
                     </td>
                     <td>
-                        <p class="item-phone text-reset">
-                            {{ obj.position }}
-                        </p>
+                        {% if obj.active %}
+                        <span class="badge bg-success-soft">Active</span>
+                        {% else %}
+                        <span class="badge bg-danger-soft">Inactive</span>
+                        {% endif %}
                     </td>
                     <td>
                         <div class="d-flex justify-content-end">

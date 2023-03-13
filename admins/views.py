@@ -71,6 +71,11 @@ class BasedCreateView(CreateView):
     image_field = None
     meta = False
 
+    def get(self, request, *args, **kwargs):
+        key = self.model._meta.verbose_name
+        predelete_image([key], request, '')
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super(BasedCreateView, self).get_context_data(**kwargs)
         context['langs'] = Languages.objects.filter(
@@ -361,6 +366,8 @@ def delete_image(request):
         if request.session.get(key):
             for it in request.session[key]:
                 if it['name'] == file:
+                    if default_storage.exists(it['name']):
+                        default_storage.delete(it['name'])
                     request.session[key].remove(it)
                     request.session.modified = True
 

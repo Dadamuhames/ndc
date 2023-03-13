@@ -94,21 +94,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                    
-                    <div class="form-group">
-                        <!-- Label  -->
-                        <label class="form-label">
-                            Порядок
-                        </label>
-                        <br>
-                        <!-- Input -->
-                        <input type="number" class="form-control" name="position" required id="porsition_id" {% if object and object.position %} value="{{ object.position|to_string }}" {% endif %}>
-                        <div class="invalid-feedback" style="display: block;">
-                            {% if errors.position %}
-                            {{ errors.position|list_item:0 }}
-                            {% endif %}
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <!-- Label  -->

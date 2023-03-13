@@ -200,3 +200,19 @@ def collect_options(nbm, req):
         end_data.append(data_dict)
 
     return end_data
+
+
+
+# predelete images
+def predelete_image(keys, request, id):
+    for key in keys:
+        files = request.session.get(key)
+
+        if files:
+            for it in list(files):
+                if it['id'] == str(id):
+                    if default_storage.exists(it['name']):
+                        default_storage.delete(it['name'])
+
+                    request.session[key].remove(it)
+                    request.session.modified = True

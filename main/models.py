@@ -40,7 +40,7 @@ class Projects(models.Model):
     link = models.URLField('Link', blank=True, null=True)
     description = models.JSONField("Descr", blank=True, null=True)
     type = models.CharField('Type', max_length=255, choices=TYPES)
-    position = models.PositiveIntegerField('Position')
+    position = models.PositiveIntegerField('Position', blank=True, null=True)
     meta = models.ForeignKey(MetaTags, on_delete=models.SET_NULL, blank=True, null=True)
     active = models.BooleanField(default=False)
     services = models.ManyToManyField(Services, blank=True, null=True)

@@ -196,7 +196,6 @@ class Translations(models.Model):
 class Partners(models.Model):
     name = models.JSONField('Name', validators=[json_field_validate])
     image = ThumbnailerImageField(upload_to='partners_images', blank=True, null=True)
-    position = models.PositiveIntegerField('Position')
     active = models.BooleanField(default=True)
 
 
@@ -217,7 +216,7 @@ class Reviews(models.Model):
     title = models.JSONField("Title", validators=[json_field_validate])
     text = models.JSONField('Text', blank=True, null=True)
     active = models.BooleanField('Active', default=True)
-    position = models.PositiveIntegerField('Position')
+    position = models.PositiveIntegerField('Position', blank=True, null=True)
     subtitle = models.JSONField('Subtitle', blank=True, null=True)
 
 
@@ -227,7 +226,7 @@ class Services(models.Model):
     title = models.JSONField('Title', validators=[json_field_validate])
     sub_title = models.JSONField('Sub title', blank=True, null=True)
     price = models.JSONField('Price', blank=True, null=True)
-    position = models.PositiveIntegerField('Position')
+    position = models.PositiveIntegerField('Position', blank=True, null=True)
     deckription = models.JSONField('Deckription', blank=True, null=True)
     image = ThumbnailerImageField(upload_to='service_images', blank=True, null=True)
     meta = models.ForeignKey(MetaTags, on_delete=models.CASCADE, blank=True, null=True)
