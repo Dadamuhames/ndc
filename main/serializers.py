@@ -155,7 +155,7 @@ class ServicesSerializer(serializers.ModelSerializer):
     title = JsonFieldSerializer()
     sub_title = JsonFieldSerializer()
     deckription = JsonFieldSerializer()
-    image = ThumbnailSerializer(alias='product_img')
+    image = ThumbnailSerializer(alias='original')
     meta = MetaFieldSerializer()
 
     class Meta:

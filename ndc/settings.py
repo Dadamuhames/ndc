@@ -159,7 +159,8 @@ THUMBNAIL_ALIASES = {
         'prod_photo': {'size': (900, 900), 'crop': False},
         'btn_img': {'size': (50, 50), 'crop': False},
         'avatar': {'size': (90, 90), 'crop': False},
-        'original': {'size': (1300, 500), 'crop': False},
+        'original': {'size': (1000, 1000), 'crop': False},\
+        'project_baner': {'size': (1500, 1500), 'crop': False}
     },
 }
 
