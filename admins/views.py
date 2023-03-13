@@ -162,6 +162,11 @@ class BasedUpdateView(UpdateView):
     image_field = None
     meta = False
 
+    def get(self, request, *args, **kwargs):
+        key = self.model._meta.verbose_name
+        predelete_image([key], request, self.get_object().id)
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super(BasedUpdateView, self).get_context_data(**kwargs)
         context['langs'] = Languages.objects.filter(
