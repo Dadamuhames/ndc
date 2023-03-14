@@ -918,7 +918,7 @@ class ShortApplicationUpdate(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(ShortApplicationUpdate, self).get_context_data(**kwargs)
-        context['statuses'] = ["На рассмотрении", "Рассмотрено", "Отклонено"]
+        context['statuses'] = ["На расмотрении", "Рассмотрено", "Отклонено"]
         context['lang'] = Languages.objects.filter(default=True).first()
 
         return context
