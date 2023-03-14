@@ -185,7 +185,7 @@ class BasedUpdateView(UpdateView):
         if self.image_field:
             key = self.model._meta.verbose_name
             try:
-                file = [it for it in self.request.session.get(key, []) if it['id'] == str(self.get_object().pk)][0]
+                file = [it for it in self.request.session.get(key, []) if it['id'] == str(self.get_object().id)][0]
             except:
                 file = None
 
@@ -424,6 +424,7 @@ class ArticleUpdate(BasedUpdateView):
     success_url = 'articles_list'
     meta = True
     related_model = ArticleCategories
+    image_field = 'image'
 
     def form_valid(self, form):
         instance = super().form_valid(form)

@@ -135,7 +135,6 @@ class LangsSerializer(serializers.ModelSerializer):
 # parnters serializer
 class PartnersSerializer(serializers.ModelSerializer):
     name = JsonFieldSerializer()
-    deckription = JsonFieldSerializer()
     image = ThumbnailSerializer(alias='avatar')
 
     class Meta:
@@ -192,7 +191,6 @@ class ProjectsDetailSerializer(ProjectSerializer):
     class Meta:
         model = Projects
         fields = '__all__'
-
 
 
 # reviews
